@@ -21,7 +21,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
       {/* SIDEBAR */}
-      <div className="w-full md:w-64  p-6 flex flex-col gap-6 shadow-md rounded-md">
+      <div className="w-full md:w-64  p-6 flex flex-col gap-6 shadow-2xl rounded-md">
         <div className="flex items-center gap-3 bg-white p-3 rounded-md shadow-md">
           <img
             src="https://i.pravatar.cc/150?img=8"

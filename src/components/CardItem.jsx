@@ -28,14 +28,17 @@ export default function CardItem({ post, grid }) {
 
   return (
     <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-      <div className="p-4">
-        <div className="flex items-start justify-between mb-3">
-          <div className="flex items-center gap-3 flex-1">
-            <img
+      <div className="p-4 flex justify-center items-center gap-2">
+    {     !grid && (<img
               src={avatar}
               alt="Avatar"
               className="w-10 h-10 rounded-full object-cover flex-shrink-0"
-            />
+            />)}
+      <div className="p-1">
+        
+        <div className="flex items-start justify-between mb-3">
+          <div className="flex items-center gap-3 flex-1">
+           
             <div className="flex-1 min-w-0">
               <h3 className="font-semibold text-gray-900 text-sm sm:text-base line-clamp-1">
                 {post.title}
@@ -66,6 +69,7 @@ export default function CardItem({ post, grid }) {
             className="w-full h-40 sm:h-48 object-cover rounded-lg"
           />
         )}
+      </div>
       </div>
     </div>
   );
