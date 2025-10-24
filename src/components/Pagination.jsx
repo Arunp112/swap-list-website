@@ -1,5 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { FaAngleLeft } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 import { setPage } from "../redux/postsSlice";
 
 export default function Pagination() {
@@ -19,13 +21,13 @@ export default function Pagination() {
       <button
         onClick={() => dispatch(setPage(Math.max(1, currentPage - 1)))}
         disabled={currentPage === 1}
-        className={`px-3 sm:px-4 py-1 sm:py-2 rounded text-sm sm:text-base transition-colors ${
+        className={`p-3  rounded-full text-sm sm:text-base transition-colors ${
           currentPage === 1
             ? "bg-gray-100 text-gray-400 cursor-not-allowed"
             : "bg-gray-200 hover:bg-gray-300"
         }`}
       >
-        Prev
+        <FaAngleLeft/>
       </button>
 
       {/* Page Numbers */}
@@ -34,7 +36,7 @@ export default function Pagination() {
           <button
             key={i}
             onClick={() => dispatch(setPage(i + 1))}
-            className={`px-3 sm:px-4 py-1 sm:py-2 rounded text-sm sm:text-base transition-colors ${
+            className={`px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base transition-colors ${
               currentPage === i + 1
                 ? "bg-green-500 text-white"
                 : "bg-gray-200 hover:bg-gray-300"
@@ -49,13 +51,13 @@ export default function Pagination() {
       <button
         onClick={() => dispatch(setPage(Math.min(totalPages, currentPage + 1)))}
         disabled={currentPage === totalPages}
-        className={`px-3 sm:px-4 py-1 sm:py-2 rounded text-sm sm:text-base transition-colors ${
+        className={` p-3 rounded-full text-sm sm:text-base transition-colors ${
           currentPage === totalPages
             ? "bg-gray-100 text-gray-400 cursor-not-allowed"
             : "bg-gray-200 hover:bg-gray-300"
         }`}
       >
-        Next
+        <FaAngleRight/>
       </button>
     </div>
   );
