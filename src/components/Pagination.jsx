@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FaAngleLeft } from "react-icons/fa";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { setPage } from "../redux/postsSlice";
 
 export default function Pagination() {
@@ -19,15 +18,15 @@ export default function Pagination() {
     <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mt-6 px-2">
       {/* Prev Button */}
       <button
-        onClick={() => dispatch(setPage(Math.max(1, currentPage - 1)))}
+        onClick={() => dispatch(setPage(currentPage - 1))}
         disabled={currentPage === 1}
-        className={`p-3  rounded-full text-sm sm:text-base transition-colors ${
+        className={`p-3 rounded-full text-sm sm:text-base transition-colors ${
           currentPage === 1
             ? "bg-gray-100 text-gray-400 cursor-not-allowed"
             : "bg-gray-200 hover:bg-gray-300"
         }`}
       >
-        <FaAngleLeft/>
+        <FaAngleLeft />
       </button>
 
       {/* Page Numbers */}
@@ -49,15 +48,15 @@ export default function Pagination() {
 
       {/* Next Button */}
       <button
-        onClick={() => dispatch(setPage(Math.min(totalPages, currentPage + 1)))}
+        onClick={() => dispatch(setPage(currentPage + 1))}
         disabled={currentPage === totalPages}
-        className={` p-3 rounded-full text-sm sm:text-base transition-colors ${
+        className={`p-3 rounded-full text-sm sm:text-base transition-colors ${
           currentPage === totalPages
             ? "bg-gray-100 text-gray-400 cursor-not-allowed"
             : "bg-gray-200 hover:bg-gray-300"
         }`}
       >
-        <FaAngleRight/>
+        <FaAngleRight />
       </button>
     </div>
   );
